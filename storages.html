@@ -17,39 +17,39 @@
         localStorage.setItem('breakfast', 'pankake')
         console.log(localStorage.getItem('breakfast'))
 
-        //remove single item
+        //Remove single item
         // localStorage.removeItem('lunch')
 
-        //remove all items
+        //Remove all items
         // localStorage.clear()
 
         var obj = {
           name: 'todd',
           age: 25,
-          gamerTag: 'rasbandit'
+          gamerTag: 'Todd Ross'
         }
-
-        //this wont work and will store a string of [objecct Object].
-        //we need to convert it to a JSON string object
+        
         // localStorage.setItem('person', obj)
-
+        //This wont work the way you want, and will store a string of [objecct Object] instead of the object.
+        //We need to convert it to a JSON string object
+        
         localStorage.setItem('person', JSON.stringify(obj))
         console.log(JSON.parse(localStorage.getItem('person')))
 
 
 
-        //session storage can hold 5mb but expires when the tab closes.
-        //stored on the browser
-        //all commands are the same as localStorage just swap out localStorage for sessionStorage
+        //Session storage can hold 5mb but expires when the tab closes or when you leave the website.
+        //Stored localally on the browser.
+        //All commands are the same as localStorage just swap out localStorage for sessionStorage.
 
 
 
-        //cookies has 4kb storage and will expire after a set tiem.
-        //by default will expire on tab close
-        //stored on both the server and browser
-        //only works if there is a web server like live server
+        //Cookies has 4kb storage and will expire after a set time.
+        //By default will expire on tab close
+        //Stored on both the server and browser
+        //Only works if there is a web server like live server
         document.cookie = "hello=true";
-        //now expires on specified date
+        //Now expires on specified date
         document.cookie = 'doSomtingOnlyOnce=true; expires=fri, 31 Dec 2020 23:59:59 GMT';
 
         console.log(document.cookie);
